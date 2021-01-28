@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/socket.io/2.3.0/socket.io.dev.js"></script>
+    <script src="./templates/index.js" type="module"></script>
+</head>
+<body>
+<h1>Flask-SocketIO Test Demo</h1>
+
+<p>
+    Average ping/pong latency: <b><span id="ping-pong"></span>ms</b>
+</p>
+<h2>Send:</h2>
+<form id="emit" method="POST" action="#">
+    <input
+            type="text"
+            name="emit_data"
+            id="emit_data"
+            placeholder="Message"
+    />
+    <input type="submit" value="Echo"/>
+</form>
+<form id="broadcast" method="POST" action="#">
+    <input
+            type="text"
+            name="broadcast_data"
+            id="broadcast_data"
+            placeholder="Message"
+    />
+    <input type="submit" value="Broadcast"/>
+</form>
+<div>
+    <button id="connect">connect</button>
+    <button id="disconnect">disconnect</button>
+</div>
+
+<h2>Receive:</h2>
+<div id="log"></div>
+</body>
+</html>
